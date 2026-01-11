@@ -1,39 +1,180 @@
-/* ===========================
-   CSS Reset & Base Styles
-   =========================== */
-
+/* RESET & BASIC SETUP */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #000000;
-    --secondary-color: #333333;
-    --text-color: #222222;
-    --text-light: #666666;
-    --bg-white: #ffffff;
-    --bg-light: #f8f8f8;
-    --border-color: #e0e0e0;
-    --transition: all 0.3s ease;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #111111; /* Almost black for softer contrast */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-white);
+    font-size: 16px;
 }
 
+/* LAYOUT CONTAINER */
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 60px 20px;
+}
+
+/* HEADER SECTION */
+header {
+    margin-bottom: 60px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px; /* Slight rounded corner, not fully round */
+    background-color: #eee;
+    flex-shrink: 0;
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.header-content p {
+    color: #555;
+    margin-bottom: 0;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0px;
+}
+
+.social-links a {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+/* SECTIONS GENERAL */
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* LISTS (Coursework) */
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px 20px;
+}
+
+li {
+    margin-bottom: 0;
+    color: #444;
+    line-height: 1.8;
+}
+
+.course-category {
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    color: #000;
+    font-size: 1rem;
+}
+
+/* PROJECT ITEMS */
+.project-item {
+    margin-bottom: 40px;
+}
+
+.tech-stack {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+.tech-stack span {
+    background-color: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    .course-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }
 
 /* ===========================
